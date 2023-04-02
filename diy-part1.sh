@@ -46,3 +46,7 @@ firmware='69027'
 echo '替换K3的无线驱动为asus-dhd24'
 wget -nv https://github.com/yangxu52/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
 echo '=========Replace k3 wireless firmware OK!========='
+
+# 添加gn 临时解决方案
+cd package
+svn co https://github.com/kenzok8/small-package/trunk/gn
