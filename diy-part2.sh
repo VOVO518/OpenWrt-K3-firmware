@@ -23,10 +23,6 @@ sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/theme
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 rm -rf package/lean/luci-theme-bootstrap
 
-echo '移除主页日志打印'
-sed -i '/console.log(mainNodeName);/d' package/lean/luci-theme-argon/htdocs/luci-static/argon/js/script.js
-echo '=========Remove log print in index OK!========='
-
 echo '修改upnp绑定文件位置'
 sed -i 's/\/var\/upnp.leases/\/tmp\/upnp.leases/g' feeds/packages/net/miniupnpd/files/upnpd.config
 cat feeds/packages/net/miniupnpd/files/upnpd.config |grep upnp_lease_file
